@@ -53,13 +53,6 @@
 		|-- test_io.rb							// Sample test of a built-in Ruby class	
 
 
-=> What's Next
-
-	* Package as a gem for distribution
-	* Extend to create TDD environments for other languages
-	* More documentation of the technique
-
-
 => Credits
 
 	Bobby Norton, DRW Trading Group
