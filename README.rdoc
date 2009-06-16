@@ -35,7 +35,7 @@ a starting point for test-driven learning in any language with any dependencies.
 
 The <code>tbox</code> application is distributed as a RubyGem and is available immediately after installation.
 
-<code>$ gem sources -a :stopdoc http://gems.github.com :startdoc </code> (you only have to do this once)
+<code>$ gem sources -a http://gems.github.com </code> (add http to the address)
 
 <code>$ sudo gem install bobbyno-tbox</code>
 
