@@ -1,6 +1,7 @@
 = tbox - A test-driven learning sandbox creation tool
 
 Project Home: http://github.com/bobbyno/tbox/tree/master
+
 More on Test-Driven Learning: http://www.bobbynorton.com/?p=36
 	
 == DESCRIPTION:
@@ -14,11 +15,9 @@ lends itself to TDD.
 
 Go to the folder where you want to create your new test sandbox, and run the <code>tbox</code> command to generate your test scaffolding.
 
-  <code>
-	$ cd ~/ruby_projects
- 	$ tbox learning_ruby
-	$ rake
-  </code>
+	<code>$ cd ~/ruby_projects</code>
+	<code>$ tbox learning_ruby</code>
+	<code>$ rake</code>
 
 == SYNOPSIS:
 
@@ -34,14 +33,13 @@ a starting point for test-driven learning in any language with any dependencies.
 
 The <code>tbox</code> application is distributed as a RubyGem and is available immediately after installation.
 
-	<code>
-	$ gem sources -a http://gems.github.com (you only have to do this once)
-	$ sudo gem install bobbyno-tbox
-	</code>
+	<code>$ gem sources -a http://gems.github.com (you only have to do this once)</code>
+	<code>$ sudo gem install bobbyno-tbox</code>
 
 Alternately, download the gem and install manually from github.
 
 == CREDITS:
 
 Bobby Norton, DRW Trading Group
+
 Dr. Nic Williams for newgem and rubigen: http://rubyconf2007.confreaks.com/d3t1p1_rubigen.html
