@@ -1,0 +1,12 @@
+Description:
+
+tbox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which 
+to start coding: A directory structure, some classes and unit tests to get started, and a Rakefile to run
+all tests. For now, tbox is geared toward Ruby, though the technique is applicable to any language that 
+lends itself to TDD.
+  
+Usage:
+  
+$ cd ~/ruby_projects
+$ tbox learning_ruby
+$ rake

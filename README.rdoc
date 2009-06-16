@@ -1,0 +1,47 @@
+= tbox - A test-driven learning sandbox creation tool
+
+Project Home: http://github.com/bobbyno/tbox/tree/master
+More on Test-Driven Learning: http://www.bobbynorton.com/?p=36
+	
+== DESCRIPTION:
+
+tbox lowers the barrier to entry for test-driven learning* by providing a basic infrastructure in which 
+to start coding: A directory structure, some classes and unit tests to get started, and a Rakefile to run
+all tests. For now, tbox is geared toward Ruby, though the technique is applicable to any language that 
+lends itself to TDD.
+
+== BASIC USAGE:
+
+Go to the folder where you want to create your new test sandbox, and run the <code>tbox</code> command to generate your test scaffolding.
+
+  <code>
+	$ cd ~/ruby_projects
+ 	$ tbox learning_ruby
+	$ rake
+  </code>
+
+== SYNOPSIS:
+
+tbox is built using newgem. Although tbox was initially designed with Ruby and Test::Unit in mind, new generator 
+scripts can easily be added to support other testing techniques in multiple languages. tbox can therefore become 
+a starting point for test-driven learning in any language with any dependencies.
+
+== REQUIREMENTS:
+
+* newgem
+
+== INSTALL:
+
+The <code>tbox</code> application is distributed as a RubyGem and is available immediately after installation.
+
+	<code>
+	$ gem sources -a http://gems.github.com (you only have to do this once)
+	$ sudo gem install bobbyno-tbox
+	</code>
+
+Alternately, download the gem and install manually from github.
+
+== CREDITS:
+
+Bobby Norton, DRW Trading Group
+Dr. Nic Williams for newgem and rubigen: http://rubyconf2007.confreaks.com/d3t1p1_rubigen.html
