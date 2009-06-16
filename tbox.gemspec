@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Bobby Norton"]
+  s.authors = ["bobbyno"]
   s.date = %q{2009-06-15}
   s.default_executable = %q{tbox}
   s.description = %q{tbox lowers the barrier to entry for test-driven learning* by providing a basic infrastructure in which  to start coding: A directory structure, some classes and unit tests to get started, and a Rakefile to run all tests. For now, tbox is geared toward Ruby, though the technique is applicable to any language that  lends itself to TDD.}
