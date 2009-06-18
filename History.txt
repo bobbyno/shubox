@@ -1,3 +1,9 @@
+== 0.5.2 2009-06-18
+
+* 1 minor enhancement:
+  * Changed newgem from dev to runtime dependency.
+
+
 == 0.5.1 2009-06-15
 
 * 1 minor enhancement:
