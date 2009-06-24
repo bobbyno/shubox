@@ -25,4 +25,16 @@ Dir['tasks/**/*.rake'].each { |t| load t }
 # TODO - want other tests/tasks run by default? Add them to the list
 # task :default => [:spec, :features]
 
-task :package => [:gemspec]
+desc "Create the gem and install it"
+task :dev => [:clean, :manifest, :clean_manifest, :gemspec, :package, :install_gem]
+
+desc "Strip out the entries in the .git folder"
+task :clean_manifest do 
+  manifest = IO.readlines("Manifest.txt")
+  clean = manifest.reject {|item| item =~ /.git/ }
+  File.open("Manifest.txt", mode_string="w" ) {|file| file.puts(clean)}
+end
+
+task :clean do
+  rm_f("tbox.gemspec")
+end

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<project default="all" basedir=".." name="<%= name %>">
+
+    <property name="message" value="Building the project...."/>
+    <property name="src" location="src"/>
+    <property name="test" location="test"/>
+    <property name="out" location="out"/>
+    <property name="dist" location="dist"/>
+    <property name="lib" location="lib"/>
+    <property name="results" location="dist/results"/>
+
+    <path id="test.lib">
+        <pathelement location="${lib}/junit.jar"/>
+        <pathelement location="${lib}/hamcrest-core.jar"/>
+        <pathelement location="${out}" />
+    </path>
+
+    <target name="all" depends="clean, init, compile, test, compress" description="Run all targets" />
+
+    <target name="clean" description="Remove working directories">
+        <delete dir="${dist}"/>
+        <delete dir="${out}"/>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${out}"/>
+        <mkdir dir="${dist}"/>
+        <mkdir dir="${results}"/>
+    </target>
+
+    <target name="compile">
+        <javac srcdir="${src}" destdir="${out}"/>
+        <javac srcdir="${test}" destdir="${out}">
+            <classpath refid="test.lib" />
+        </javac>
+    </target>
+
+    <target name="test" depends="compile">
+        <junit printsummary="yes" haltonfailure="yes">
+            <formatter type="brief" usefile="false"/>
+            <classpath refid="test.lib"/>
+            <batchtest>
+                <fileset dir="${out}" includes="**/*Test.class"/>
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="compress">
+        <jar destfile="${dist}/${ant.project.name}.jar" basedir="${out}">
+            <include name="**/*.class"/>
+            <exclude name="**/*Test.class"/>
+        </jar>
+    </target>
+
+</project>

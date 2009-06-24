@@ -2,25 +2,27 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tbox}
-  s.version = "0.5.2"
+  s.version = "0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bobby Norton"]
-  s.date = %q{2009-06-18}
+  s.date = %q{2009-06-24}
   s.default_executable = %q{tbox}
-  s.description = %q{Provides a basic directory structure for test-driven learning.}
+  s.description = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's. 
+tbox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which 
+to start coding: A directory structure, some classes and unit tests to get started, and a build script.}
   s.email = ["codeculturist@gmail.com"]
   s.executables = ["tbox"]
-  s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc", "app_generators/tbox/templates/file.txt"]
-  s.files = ["History.txt", "MIT-LICENSE", "Manifest.txt", "PostInstall.txt", "README.rdoc", "Rakefile", "app_generators/tbox/USAGE", "app_generators/tbox/tbox_generator.rb", "app_generators/tbox/templates/README", "app_generators/tbox/templates/file.txt", "app_generators/tbox/templates/rakefile.rb", "app_generators/tbox/templates/right_triangle.rb", "app_generators/tbox/templates/tbox.rb", "app_generators/tbox/templates/test_helper.rb", "app_generators/tbox/templates/test_io.rb", "app_generators/tbox/templates/test_right_triangle.rb", "bin/tbox", "lib/tbox.rb", "script/console", "script/destroy", "script/generate", "tbox.gemspec", "test/test_generator_helper.rb", "test/test_helper.rb", "test/test_tbox_generator.rb"]
+  s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc", "app_generators/ruby/templates/file.txt"]
+  s.files = ["History.txt", "MIT-LICENSE", "Manifest.txt", "PostInstall.txt", "README.rdoc", "Rakefile", "app_generators/java/USAGE", "app_generators/java/java_generator.rb", "app_generators/java/templates/Greeting.java", "app_generators/java/templates/GreetingTest.java", "app_generators/java/templates/build.xml", "app_generators/java/templates/lib/hamcrest-core.jar", "app_generators/java/templates/lib/junit.jar", "app_generators/java/templates/project.iml", "app_generators/java/templates/project.ipr", "app_generators/ruby/USAGE", "app_generators/ruby/ruby_generator.rb", "app_generators/ruby/templates/file.txt", "app_generators/ruby/templates/rakefile.rb", "app_generators/ruby/templates/right_triangle.rb", "app_generators/ruby/templates/tbox.rb", "app_generators/ruby/templates/test_helper.rb", "app_generators/ruby/templates/test_io.rb", "app_generators/ruby/templates/test_right_triangle.rb", "bin/tbox", "lib/languages.rb", "lib/tbox.rb", "lib/tbox_app_generator.rb", "script/console", "script/destroy", "script/generate", "test/test_generator_helper.rb", "test/test_helper.rb", "test/test_java_generator.rb", "test/test_languages.rb", "test/test_ruby_generator.rb"]
   s.homepage = %q{http://github.com/bobbyno/tbox/tree/master}
   s.post_install_message = %q{PostInstall.txt}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{tbox}
   s.rubygems_version = %q{1.3.4}
-  s.summary = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's,  tbox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which  to start coding: A directory structure, some classes and unit tests to get started, and a Rakefile to run all tests.}
-  s.test_files = ["test/test_generator_helper.rb", "test/test_helper.rb", "test/test_tbox_generator.rb"]
+  s.summary = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's}
+  s.test_files = ["test/test_generator_helper.rb", "test/test_helper.rb", "test/test_java_generator.rb", "test/test_languages.rb", "test/test_ruby_generator.rb"]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

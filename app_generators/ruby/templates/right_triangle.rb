@@ -14,11 +14,5 @@ class RightTriangle
   def area
     0.5 * @a * @b
   end
-  
-private
 
-  def s
-    semiperimeter
-  end
-  
 end

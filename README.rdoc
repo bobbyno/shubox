@@ -1,4 +1,4 @@
-= tbox - A test-driven learning sandbox creation tool
+= tbox - A framework to create sandboxes for test-driven learning
 
 http://github.com/bobbyno/tbox/tree/master
 
@@ -6,17 +6,15 @@ More on Test-Driven Learning: http://www.bobbynorton.com/?p=36
 	
 == DESCRIPTION:
 
-Test-driven learning is a way to master a programming language by writing unit tests around its API's, 
+Test-driven learning is a way to master a programming language by writing unit tests around its API's. 
 tbox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which 
-to start coding: A directory structure, some classes and unit tests to get started, and a Rakefile to run
-all tests. For now, tbox is geared toward Ruby, though the technique is applicable to any language that 
-lends itself to TDD.
+to start coding: A directory structure, some classes and unit tests to get started, and a build script. 
 
 == INSTALL:
 
 The <code>tbox</code> application is distributed as a RubyGem and is available immediately after installation.
 
-<code>$ gem sources -a http(colon)//gems.github.com</code>
+<code>$ gem sources -a http:http://gems.github.com</code>
 
 <code>$ sudo gem install bobbyno-tbox</code>
 
@@ -27,17 +25,30 @@ Alternately, download the gem and install manually from github.
 Go to the folder where you want to create your new test sandbox, and run the <code>tbox</code> command 
 to generate your test scaffolding.
 
+The default is Ruby:
+
 <code>$ cd ~/ruby_projects</code>
 
 <code>$ tbox learning_ruby</code>
 
 <code>$ rake</code>
 
+tbox also supports Java:
+
+<code>$ cd ~/java_projects</code>
+
+<code>$ tbox -j LearnJava</code>
+
+<code>$ ant -f build/build.xml</code>
+
+The Java command will also generate a <project name>.ipr file to allow the project to easily be
+opened in IntelliJ 8. 
+
 == SYNOPSIS:
 
-tbox is built using newgem. Although tbox was initially designed with Ruby and Test::Unit in mind, new generator 
-scripts can easily be added to support other testing techniques in multiple languages. tbox can therefore become 
-a starting point for test-driven learning in any language with any dependencies.
+tbox currently creates environments for Ruby and Java, but can easily be extended to any language that
+lends itself to unit testing. tbox is built on newgem, so extending the framework is as simple as creating 
+new generator scripts. 
 
 == REQUIREMENTS:
 
