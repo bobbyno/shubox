@@ -1,6 +1,6 @@
 $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
-module Tbox
-  VERSION = '0.6'
+module Shubox
+  VERSION = '0.7'
 end

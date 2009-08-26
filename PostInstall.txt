@@ -1,5 +1,5 @@
 
-For more information on tbox, see http://github.com/bobbyno/tbox/tree/master
+For more information on shubox, see http://github.com/bobbyno/shubox/tree/master
 
 
 

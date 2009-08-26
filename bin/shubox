@@ -2,11 +2,11 @@
 
 require 'rubygems'
 require 'rubigen'
-require File.dirname(__FILE__) + "/../lib/tbox"
+require File.dirname(__FILE__) + "/../lib/shubox"
 require File.dirname(__FILE__) + "/../lib/languages"
   
 if %w(-v --version).include? ARGV.first
-  puts "#{File.basename($0)} #{Tbox::VERSION}"
+  puts "#{File.basename($0)} #{Shubox::VERSION}"
   exit(0)
 end
 

@@ -18,7 +18,7 @@ class TestRubyGenerator < Test::Unit::TestCase
     assert_generated_file   "rakefile.rb"
     assert_directory_exists "lib/samples"
     assert_generated_file   "lib/samples/right_triangle.rb"
-    assert_generated_file   "lib/tbox.rb"
+    assert_generated_file   "lib/shubox.rb"
     assert_directory_exists "test/samples"
     assert_generated_file   "test/samples/test_right_triangle.rb"
     assert_directory_exists "test/data"

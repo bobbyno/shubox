@@ -1,6 +1,6 @@
-require 'tbox_app_generator'
+require 'shubox_app_generator'
 
-class RubyGenerator < TboxAppGenerator
+class RubyGenerator < ShuboxAppGenerator
 
   def manifest
     record do |m|
@@ -11,7 +11,7 @@ class RubyGenerator < TboxAppGenerator
       m.file "rakefile.rb", "rakefile.rb"
       m.directory "lib/samples"
       m.file "right_triangle.rb", "lib/samples/right_triangle.rb"
-      m.file "tbox.rb", "lib/tbox.rb"
+      m.file "shubox.rb", "lib/shubox.rb"
       m.directory "test/samples"
       m.directory "test/data"
       m.file "test_right_triangle.rb", "test/samples/test_right_triangle.rb"
@@ -19,7 +19,7 @@ class RubyGenerator < TboxAppGenerator
       m.file "file.txt", "test/data/file.txt"
       m.file "test_helper.rb", "test/test_helper.rb"
 
-      m.dependency "install_rubigen_scripts", [destination_root, 'tbox'],
+      m.dependency "install_rubigen_scripts", [destination_root, 'shubox'],
         :shebang => options[:shebang], :collision => :force
     end
   end

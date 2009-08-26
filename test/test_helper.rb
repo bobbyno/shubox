@@ -1,4 +1,4 @@
 require 'stringio'
 require 'test/unit'
-require File.dirname(__FILE__) + '/../lib/tbox'
+require File.dirname(__FILE__) + '/../lib/shubox'
 

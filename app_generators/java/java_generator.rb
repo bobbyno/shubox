@@ -1,6 +1,6 @@
-require 'tbox_app_generator'
+require 'shubox_app_generator'
 
-class JavaGenerator < TboxAppGenerator
+class JavaGenerator < ShuboxAppGenerator
 
   def manifest
     record do |m|

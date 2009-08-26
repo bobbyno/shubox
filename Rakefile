@@ -1,10 +1,18 @@
-require 'rubygems' unless ENV['NO_RUBYGEMS']
-%w[rake rake/clean fileutils newgem rubigen].each { |f| require f }
-require File.dirname(__FILE__) + '/lib/tbox'
+require 'rubygems'
+gem 'hoe', '>= 2.1.0'
+require 'hoe'
+require 'fileutils'
+require './lib/shubox'
+
+Hoe.plugin :newgem
+
+# require 'rubygems' unless ENV['NO_RUBYGEMS']
+# %w[rake rake/clean fileutils newgem rubigen].each { |f| require f }
+# require File.dirname(__FILE__) + '/lib/shubox'
 
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.new('tbox', Tbox::VERSION) do |p|
+$hoe = Hoe.spec 'shubox' do |p|
   p.developer('Bobby Norton', 'codeculturist@gmail.com')
   p.changes = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
@@ -12,7 +20,6 @@ $hoe = Hoe.new('tbox', Tbox::VERSION) do |p|
   p.extra_deps = [
     ['newgem', ">= #{::Newgem::VERSION}"]
   ]
-  
   p.clean_globs |= %w[**/.DS_Store tmp *.log]
   path = (p.rubyforge_name == p.name) ? p.rubyforge_name : "\#{p.rubyforge_name}/\#{p.name}"
   p.remote_rdoc_dir = File.join(path.gsub(/^#{p.rubyforge_name}\/?/,''), 'rdoc')
@@ -28,7 +35,7 @@ Dir['tasks/**/*.rake'].each { |t| load t }
 desc "Create the gem and install it"
 task :dev => [:clean, :manifest, :clean_manifest, :gemspec, :package, :install_gem]
 
-desc "Strip out the entries in the .git folder"
+desc "Strip out the entries in the .git folder for ppl who haven't updated .hoerc" 
 task :clean_manifest do 
   manifest = IO.readlines("Manifest.txt")
   clean = manifest.reject {|item| item =~ /.git/ }
@@ -36,5 +43,5 @@ task :clean_manifest do
 end
 
 task :clean do
-  rm_f("tbox.gemspec")
+  rm_f("shubox.gemspec")
 end
