@@ -35,8 +35,8 @@ Dir['tasks/**/*.rake'].each { |t| load t }
 desc "Create the gem and install it"
 task :dev => [:clean, :manifest, :clean_manifest, :gemspec, :package, :install_gem]
 
-desc "Strip out the entries in the .git folder for ppl who haven't updated .hoerc" 
-task :clean_manifest do 
+desc "Strip out the entries in the .git folder for ppl who haven't updated .hoerc"
+task :clean_manifest do
   manifest = IO.readlines("Manifest.txt")
   clean = manifest.reject {|item| item =~ /.git/ }
   File.open("Manifest.txt", mode_string="w" ) {|file| file.puts(clean)}

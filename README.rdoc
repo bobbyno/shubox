@@ -3,12 +3,12 @@
 http://github.com/bobbyno/shubox/tree/master
 
 More on Test-Driven Learning: http://www.bobbynorton.com/?p=36
-	
+
 == DESCRIPTION:
 
-Test-driven learning is a way to master a programming language by writing unit tests around its API's. 
-shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which 
-to start coding: A directory structure, some classes and unit tests to get started, and a build script. 
+Test-driven learning is a way to master a programming language by writing unit tests around its API's.
+shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
+to start coding: A directory structure, some classes and unit tests to get started, and a build script.
 
 == INSTALL:
 
@@ -22,7 +22,7 @@ Alternately, download the gem and install manually from github.
 
 == BASIC USAGE:
 
-Go to the folder where you want to create your new test sandbox, and run the <code>shubox</code> command 
+Go to the folder where you want to create your new test sandbox, and run the <code>shubox</code> command
 to generate your test scaffolding.
 
 The default is Ruby:
@@ -42,13 +42,13 @@ shubox also supports Java:
 <code>$ ant -f build/build.xml</code>
 
 The Java command will also generate a <project name>.ipr file to allow the project to easily be
-opened in IntelliJ 8. 
+opened in IntelliJ 8.
 
 == SYNOPSIS:
 
 shubox currently creates environments for Ruby and Java, but can easily be extended to any language that
-lends itself to unit testing. shubox is built on newgem, so extending the framework is as simple as creating 
-new generator scripts. 
+lends itself to unit testing. shubox is built on newgem, so extending the framework is as simple as creating
+new generator scripts.
 
 == REQUIREMENTS:
 

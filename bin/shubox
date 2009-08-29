@@ -4,7 +4,7 @@ require 'rubygems'
 require 'rubigen'
 require File.dirname(__FILE__) + "/../lib/shubox"
 require File.dirname(__FILE__) + "/../lib/languages"
-  
+
 if %w(-v --version).include? ARGV.first
   puts "#{File.basename($0)} #{Shubox::VERSION}"
   exit(0)
@@ -12,7 +12,7 @@ end
 
 require 'rubigen/scripts/generate'
 
-source = RubiGen::PathSource.new(:application, 
+source = RubiGen::PathSource.new(:application,
   File.join(File.dirname(__FILE__), "../app_generators"))
 RubiGen::Base.reset_sources
 RubiGen::Base.append_sources source

@@ -1,7 +1,7 @@
 == 0.7 2009-08-26
 
 * Project rename:
-  * tbox -> shubox: Shubox helps you move more quickly from Shu to Ha and Ri. 
+  * tbox -> shubox: Shubox helps you move more quickly from Shu to Ha and Ri.
   * Thanks to Alistair Cockburn @ Agile 2009 for this one.
 
 

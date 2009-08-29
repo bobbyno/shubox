@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors = ["Bobby Norton"]
   s.date = %q{2009-06-24}
   s.default_executable = %q{shubox}
-  s.description = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's. 
-shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which 
+  s.description = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's.
+shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
 to start coding: A directory structure, some classes and unit tests to get started, and a build script.}
   s.email = ["codeculturist@gmail.com"]
   s.executables = ["shubox"]

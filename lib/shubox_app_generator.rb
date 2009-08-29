@@ -1,5 +1,5 @@
 class ShuboxAppGenerator < RubiGen::Base
-  
+
   DEFAULT_SHEBANG = File.join(Config::CONFIG['bindir'],
                               Config::CONFIG['ruby_install_name'])
 
@@ -15,13 +15,13 @@ class ShuboxAppGenerator < RubiGen::Base
     @name = base_name
     extract_options
   end
-  
+
   protected
-  
+
     def banner
       "\n" << IO.readlines(File.join(File.dirname(__FILE__), "../README.rdoc"))[0]
     end
-    
+
     def add_options!(opts)
       opts.separator ''
       opts.separator 'Options:'
@@ -37,5 +37,4 @@ class ShuboxAppGenerator < RubiGen::Base
     def extract_options
       @language = options[:language]
     end
-  
 end

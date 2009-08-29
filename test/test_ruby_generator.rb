@@ -14,7 +14,7 @@ class TestRubyGenerator < Test::Unit::TestCase
 
   def test_generator_without_options
     run_generator('ruby', [APP_ROOT], sources)
-    
+
     assert_generated_file   "rakefile.rb"
     assert_directory_exists "lib/samples"
     assert_generated_file   "lib/samples/right_triangle.rb"
@@ -25,8 +25,7 @@ class TestRubyGenerator < Test::Unit::TestCase
     assert_generated_file   "test/data/file.txt"
     assert_generated_file   "test/test_io.rb"
     assert_generated_file   "test/test_helper.rb"
-    
+
     run_generated_build_script("rake")
   end
-  
 end
