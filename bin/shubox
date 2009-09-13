@@ -4,9 +4,19 @@ require 'rubygems'
 require 'rubigen'
 require File.dirname(__FILE__) + "/../lib/shubox"
 require File.dirname(__FILE__) + "/../lib/languages"
+require File.dirname(__FILE__) + "/../app_cleaners/init"
 
 if %w(-v --version).include? ARGV.first
   puts "#{File.basename($0)} #{Shubox::VERSION}"
+  exit(0)
+elsif %w(-c --clean).include? ARGV.first
+  dir = ARGV.select{|x| x[0] != 45}.first.sub /\/$/, ''
+  files = Dir["#{dir}/test/**/test_*.rb"].each do |file|
+    unless file.match /test_helper.rb/
+      puts "cleaning: #{file}"
+      RubyCleaner.clean file
+    end
+  end
   exit(0)
 end
 
