@@ -32,6 +32,7 @@ class ShuboxAppGenerator < RubiGen::Base
       #         "Default: none") { |o| options[:author] = o }
       opts.on("-l", "--language=name", "Language of the environment to generate. Options: #{Languages.print}", "Default: ruby")
       opts.on("-v", "--version", "Show the #{File.basename($0)} version number and quit.")
+      opts.on("-c", "--clean", "Clean the test files to retest yourself")
     end
 
     def extract_options

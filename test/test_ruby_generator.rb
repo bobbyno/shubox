@@ -1,5 +1,6 @@
 require File.join(File.dirname(__FILE__), "test_generator_helper.rb")
 require 'fileutils'
+require 'languages'
 
 class TestRubyGenerator < Test::Unit::TestCase
   include RubiGen::GeneratorTestHelper
