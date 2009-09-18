@@ -42,6 +42,14 @@ module RubiGen::GeneratorTestHelper
     end
   end
 
+  def run_generated_cleaner(cmd)
+    FileUtils::cd(APP_ROOT + '/script') do
+      puts "Running generated clean script in #{FileUtils::pwd} with #{cmd}"
+      `#{cmd}`
+      raise "Exit code #{$?} while running generated build script with #{cmd}" if ($?.to_s != "0")
+    end
+  end
+
   def sources
     [RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__),"..", generator_path))]
   end

@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + '/test_unit_cleaner'
+
+Shubox::TestUnitCleaner.new.run(ARGV)

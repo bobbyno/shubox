@@ -45,3 +45,7 @@ end
 task :clean do
   rm_f("shubox.gemspec")
 end
+
+task :uninstall do
+  sh "sudo gem uninstall shubox"
+end

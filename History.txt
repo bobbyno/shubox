@@ -1,3 +1,10 @@
+== 0.8 2009-09-19
+
+* 1 major enhancement:
+	* clean script now included in generated shubox to reset tests in ruby. 
+	* Thanks to bendyworks for the original concept in his patch.
+
+
 == 0.7 2009-08-26
 
 * Project rename:

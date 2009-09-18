@@ -4,27 +4,18 @@ require 'rubygems'
 require 'rubigen'
 require File.dirname(__FILE__) + "/../lib/shubox"
 require File.dirname(__FILE__) + "/../lib/languages"
-require File.dirname(__FILE__) + "/../app_cleaners/init"
 
 if %w(-v --version).include? ARGV.first
   puts "#{File.basename($0)} #{Shubox::VERSION}"
-  exit(0)
-elsif %w(-c --clean).include? ARGV.first
-  dir = ARGV.select{|x| x[0] != 45}.first.sub /\/$/, ''
-  files = Dir["#{dir}/test/**/test_*.rb"].each do |file|
-    unless file.match /test_helper.rb/
-      puts "cleaning: #{file}"
-      RubyCleaner.clean file
-    end
-  end
   exit(0)
 end
 
 require 'rubigen/scripts/generate'
 
-source = RubiGen::PathSource.new(:application,
-  File.join(File.dirname(__FILE__), "../app_generators"))
-RubiGen::Base.reset_sources
-RubiGen::Base.append_sources source
+RubiGen::Base.use_application_sources! :rubygems
+RubiGen::Base.prepend_sources(*[ 
+  RubiGen::PathSource.new(:app, File.join(File.dirname(__FILE__), "..", "app_generators")),
+  RubiGen::PathSource.new(:app, File.join(File.dirname(__FILE__), "..", "cleaner_generators"))
+])
 
 RubiGen::Scripts::Generate.new.run(ARGV, :generator => Languages.parse(ARGV))

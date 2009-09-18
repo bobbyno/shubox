@@ -9,6 +9,10 @@ class TestLanguages < Test::Unit::TestCase
     assert(!langs.include?("."))
     assert(!langs.include?(".."))
   end
+  
+  def test_ruby_is_default_language
+    assert_equal("ruby", Languages.parse(""))
+  end
 
   def test_parse_command_for_valid_language
     args = %w{-l=java MyAppName}
@@ -18,7 +22,7 @@ class TestLanguages < Test::Unit::TestCase
   end
 
   def test_reject_invalid_language
-    args = %w{-l=non sense}
+    args = %w{-l=nonsense}
     assert_raise RuntimeError do
       Languages.parse(args)
     end

@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper'
 
-# Expo usage note: Keeping an inline bookmark to the rdocs for the class under study
+# Pro tip: Keeping an inline bookmark to the rdocs for the class under study
 # makes it easy to continue your learning later.
 
 # Exploring the methods of the IO class: http://www.ruby-doc.org/core/classes/IO.html

@@ -44,6 +44,17 @@ shubox also supports Java:
 The Java command will also generate a <project name>.ipr file to allow the project to easily be
 opened in IntelliJ 8.
 
+Write new learning tests, naming each method with the intent of the lesson. Write the code that
+makes a test pass. Write new tests for new concepts. 
+
+Now run script/clean. Cleaners will reset test files by deleting 
+method bodies. Can you complete the lesson from memory? If so, can you do so faster than before? 
+If not, you may need to study the concept more closely. 
+
+Repeat a test-driven lesson until you can easily rewrite it from scratch. Once you can do so, 
+you may move on to another lesson. This is repetition with a retrieval step, which leads to 
+long-term retention.
+
 == SYNOPSIS:
 
 shubox currently creates environments for Ruby and Java, but can easily be extended to any language that
@@ -59,3 +70,8 @@ new generator scripts.
 Bobby Norton, DRW Trading Group
 
 Dr. Nic Williams for newgem and rubigen: {RubyConf 2007 Presentation}[http://rubyconf2007.confreaks.com/d3t1p1_rubigen.html]
+
+Jim Weirich and EdgeCase for {ruby_koans}[]
+
+SCNA 2009, Chicago, IL
+

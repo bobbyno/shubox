@@ -1,8 +1,9 @@
 require 'shubox_app_generator'
+require 'shubox'
 
 class RubyGenerator < ShuboxAppGenerator
 
-  def manifest
+  def manifest    
     record do |m|
       # Ensure appropriate folder(s) exists
       m.directory ''
@@ -21,6 +22,8 @@ class RubyGenerator < ShuboxAppGenerator
 
       m.dependency "install_rubigen_scripts", [destination_root, 'shubox'],
         :shebang => options[:shebang], :collision => :force
+        
+      m.dependency "install_test_unit_cleaner", ['shubox'], :destination => destination_root, :collision => :force
     end
   end
 

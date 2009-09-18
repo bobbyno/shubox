@@ -1,7 +1,7 @@
 class Languages
   def self.parse(args)
     lang = args.find {|arg| ((arg =~ /-l=/) or (arg =~ /--language=/)) }
-    lang = "-l=ruby" if lang.nil?
+    lang ||= "-l=ruby"
     lang = lang.split('=')[1]
     raise "Supported languages: #{current.inspect}" if (!current.member?(lang))
     lang
