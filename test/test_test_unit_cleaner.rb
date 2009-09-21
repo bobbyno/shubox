@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), "test_generator_helper.rb")
-require File.join(File.dirname(__FILE__), '..', 'cleaner_generators', 'install_test_unit_cleaner', 'templates', 'test_unit_cleaner')
+require File.join(File.dirname(__FILE__), '..', 'cleaner_generators', 'test_unit_cleaner', 'templates', 'test_unit_cleaner')
 require 'fileutils'
 require 'languages'
 
@@ -16,7 +16,7 @@ class TestTestUnitCleaner < Test::Unit::TestCase
   end
 
   def test_cleaner_without_options
-    run_generator('install_test_unit', [APP_ROOT], sources)
+    run_generator('test_unit_cleaner', [APP_ROOT], sources)
   end
 
   def test_cleaner_on_simple_file

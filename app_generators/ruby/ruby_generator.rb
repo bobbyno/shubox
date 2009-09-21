@@ -20,10 +20,10 @@ class RubyGenerator < ShuboxAppGenerator
       m.file "file.txt", "test/data/file.txt"
       m.file "test_helper.rb", "test/test_helper.rb"
 
-      m.dependency "install_rubigen_scripts", [destination_root, 'shubox'],
+      m.dependency "install_rubigen_scripts", [destination_root, "rubygems", "cleaner"],
         :shebang => options[:shebang], :collision => :force
         
-      m.dependency "install_test_unit_cleaner", ['shubox'], :destination => destination_root, :collision => :force
+      m.dependency "test_unit_cleaner", [], :destination => destination_root, :collision => :force
     end
   end
 

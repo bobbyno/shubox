@@ -1,4 +1,4 @@
-class InstallTestUnitCleanerGenerator < RubiGen::Base
+class TestUnitCleanerGenerator < RubiGen::Base
   
   def initialize(runtime_args, runtime_options = {})
     super
@@ -13,5 +13,15 @@ class InstallTestUnitCleanerGenerator < RubiGen::Base
       m.template "clean_test_unit", "script/clean_test_unit", script_options
       m.file "test_unit_cleaner.rb", "script/test_unit_cleaner.rb"
     end
+  end
+  
+protected
+  def banner
+        <<-EOS
+Install a cleaner for Test::Unit tests. 
+
+Deletes all method bodies in the tests.
+
+EOS
   end
 end

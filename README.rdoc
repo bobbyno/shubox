@@ -61,6 +61,20 @@ shubox currently creates environments for Ruby and Java, but can easily be exten
 lends itself to unit testing. shubox is built on newgem, so extending the framework is as simple as creating
 new generator scripts.
 
+== Application Architecture
+
+Shubox is organized as a set of generators, as in newgem and RubiGen. 
+
+app_generators are where we define the basic environment for one of our supported languages.
+
+cleaner_generators hold the test framework cleaning implementations to reset tests. 
+These can be mixed and matched to support polyglots like JRuby by installing both JUnit and test_unit
+cleaners.
+
+lib/cleaners/ hold the implementations of the cleaners referenced in the files copied to the sandbox. 
+This makes it easy to upgrade existing shuboxes.
+
+
 == REQUIREMENTS:
 
 * newgem

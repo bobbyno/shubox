@@ -1,0 +1,7 @@
+USAGE: test_unit_cleaner path/to/file
+
+Give the test files a clean sweep to retest yourself.
+Deletes the method bodies from all tests in the specified file,
+a clean sweep to retest yourself. If file is a directory, 
+all tests in the directory matching the pattern 
+path/to/file/test/**/test_*.rb will be affected.

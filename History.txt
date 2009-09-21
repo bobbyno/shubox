@@ -3,7 +3,8 @@
 * 1 major enhancement:
 	* clean script now included in generated shubox to reset tests in ruby. 
 	* Thanks to bendyworks for the original concept in his patch.
-
+	* cleaners organized as generators to simplify new cleaner creation.
+	
 
 == 0.7 2009-08-26
 
