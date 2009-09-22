@@ -27,7 +27,6 @@ class TestRubyGenerator < Test::Unit::TestCase
     assert_generated_file   "test/test_io.rb"
     assert_generated_file   "test/test_helper.rb"
     assert_generated_file   "script/clean_test_unit"
-    assert_generated_file   "script/test_unit_cleaner.rb"
 
     run_generated_build_script("rake")
   end

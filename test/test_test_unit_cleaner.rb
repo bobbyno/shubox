@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), "test_generator_helper.rb")
-require File.join(File.dirname(__FILE__), '..', 'cleaner_generators', 'test_unit_cleaner', 'templates', 'test_unit_cleaner')
+require File.join(File.dirname(__FILE__), '..', 'cleaner_generators', 'test_unit_cleaner', 'lib', 'test_unit_cleaner')
 require 'fileutils'
 require 'languages'
 
@@ -13,6 +13,11 @@ class TestTestUnitCleaner < Test::Unit::TestCase
 
   def teardown
     bare_teardown
+  end
+  
+  def test_display_usage_with_no_args
+    usage = Shubox::TestUnitCleaner.new.usage
+    assert_not_nil(usage)
   end
 
   def test_cleaner_without_options

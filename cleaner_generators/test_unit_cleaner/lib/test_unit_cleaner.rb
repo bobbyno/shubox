@@ -10,7 +10,7 @@ module Shubox
       dir = ARGV.first
 
       files = Dir["#{dir}/test/**/test_*.rb"].each do |file|
-        unless file.match /test_helper.rb/
+        unless file.match(/test_helper.rb/)
           puts "cleaning: #{file}"
           clean(file)
         end
@@ -39,13 +39,8 @@ module Shubox
     end
     
     def usage
-  <<-EOS
-USAGE: test_unit_cleaner path/to/file
-
-Deletes the method bodies from all tests in the specified file. 
-If file is a directory, all tests in the directory matching the 
-pattern path/to/file/test/**/test_*.rb will be affected. 
-  EOS
+      usage_file = File.dirname(__FILE__) + "/../USAGE"
+      return File.readlines(usage_file)
     end
   end
 end

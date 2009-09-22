@@ -11,7 +11,6 @@ class TestUnitCleanerGenerator < RubiGen::Base
     record do |m|
       m.directory 'script'
       m.template "clean_test_unit", "script/clean_test_unit", script_options
-      m.file "test_unit_cleaner.rb", "script/test_unit_cleaner.rb"
     end
   end
   

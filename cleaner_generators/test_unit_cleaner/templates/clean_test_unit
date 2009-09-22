@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
 
-require File.dirname(__FILE__) + '/test_unit_cleaner'
+begin
+  require 'shubox'
+rescue LoadError
+  require 'rubygems'
+  require 'shubox'
+end
+
+require 'test_unit_cleaner/lib/test_unit_cleaner'
 
 Shubox::TestUnitCleaner.new.run(ARGV)
