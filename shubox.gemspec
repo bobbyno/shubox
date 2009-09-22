@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bobby Norton"]
-  s.date = %q{2009-09-21}
+  s.date = %q{2009-09-22}
   s.default_executable = %q{shubox}
   s.description = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's.
 shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which

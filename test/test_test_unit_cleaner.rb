@@ -16,18 +16,22 @@ class TestTestUnitCleaner < Test::Unit::TestCase
   end
   
   def test_display_usage_with_no_args
-    usage = Shubox::TestUnitCleaner.new.usage
-    assert_not_nil(usage)
+    no_args = Shubox::TestUnitCleaner.new.run([])
+    assert_equal(0, no_args)
   end
-
-  def test_cleaner_without_options
-    run_generator('test_unit_cleaner', [APP_ROOT], sources)
+  
+  def test_display_usage_with_help
+    help = Shubox::TestUnitCleaner.new.run(["--help"])
+    assert_equal(0, help)
   end
-
-  def test_cleaner_on_simple_file
-    file_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject', 'test', 'test_io.rb'))
-    Shubox::TestUnitCleaner.new.clean file_to_clean
-    assert_equal <<-EOF, File.read(file_to_clean)
+  
+  def test_run_cleaner_on_directory
+    dir_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject'))
+    puts "\n" + dir_to_clean
+    clean_file = File.join(dir_to_clean, 'test', 'test_io.rb')
+    puts clean_file
+    Shubox::TestUnitCleaner.new.run([dir_to_clean, "ignored extra parameter"])
+    assert_equal <<-EOF, File.read(clean_file)
 require File.dirname(__FILE__) + '/test_helper'
 
 # Pro tip: Keeping an inline bookmark to the rdocs for the class under study
@@ -41,9 +45,9 @@ end
 EOF
   end
 
-  def test_cleaner_on_more_complex_file
+  def test_run_cleaner_on_single_file
     file_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject', 'test', 'samples', 'test_right_triangle.rb'))
-    Shubox::TestUnitCleaner.new.clean file_to_clean
+    Shubox::TestUnitCleaner.new.run([file_to_clean])
     assert_equal <<-EOF, File.read(file_to_clean)
 require File.dirname(__FILE__) + '/../test_helper'
 require 'samples/right_triangle'
