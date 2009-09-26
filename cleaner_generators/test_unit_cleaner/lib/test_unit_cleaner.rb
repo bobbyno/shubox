@@ -8,24 +8,19 @@ module Shubox
       end
 
       target = args.first
+      # Look for a test class - if there's one, clean lines
+      # Use File.file?("/tmp") to see if it's a file
+      # Use Dir to find files in the directory - if there are some, it's a dir.
+      
       
       if (/.rb$/ =~ target)
-        clean(target)
+        clean_file(target)
       else
         clean_directory(target)
       end
     end
     
-    private    
-    def clean_directory(dir)
-      files = Dir["#{dir}/test/**/test_*.rb"].each { |file| clean(file) }
-    end
-    
-    def clean(filename)
-      return if /test_helper.rb/ =~ filename 
-      puts "cleaning: #{filename}"
-      
-      lines = File.readlines(filename)
+    def clean_class(lines)
       output = []
       outside_class = true
       
@@ -42,9 +37,23 @@ module Shubox
         end
       end
       output << 'end'
+      output.join
+    end
+    
+    private    
+    def clean_directory(dir)
+      files = Dir["#{dir}/test/**/test_*.rb"].each { |file| clean_file(file) }
+    end
+    
+    def clean_file(filename)
+      return if /test_helper.rb/ =~ filename 
+      puts "cleaning: #{filename}"
+      
+      lines = File.readlines(filename)
+      output = clean_class(lines)
       
       open(filename, 'w') do |f|
-        f.puts output.join
+        f.puts output
       end
     end
     

@@ -2,15 +2,19 @@
 
 Gem::Specification.new do |s|
   s.name = %q{shubox}
-  s.version = "0.8"
+  s.version = "0.8.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bobby Norton"]
-  s.date = %q{2009-09-22}
+  s.date = %q{2009-09-26}
   s.default_executable = %q{shubox}
   s.description = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's.
 shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
-to start coding: A directory structure, some classes and unit tests to get started, and a build script.}
+to start coding: A directory structure, some classes and unit tests to get started, and a build script.
+
+shubox currently creates environments for Ruby and Java, but can easily be extended to any language that
+lends itself to unit testing. shubox is built on newgem, so extending the framework is as simple as creating
+new generator scripts.}
   s.email = ["codeculturist@gmail.com"]
   s.executables = ["shubox"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "app_generators/ruby/templates/file.txt", "README.rdoc"]

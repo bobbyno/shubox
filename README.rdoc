@@ -69,7 +69,8 @@ app_generators are where we define the basic environment for one of our supporte
 
 cleaner_generators hold the test framework cleaning implementations to reset tests. 
 In the future, these can be mixed and matched to support polyglots like JRuby by installing both 
-JUnit and Test::Unit cleaners.
+JUnit and Test::Unit cleaners. Run script/generate in a generated shubox to see the list of 
+available cleaners and generators that can be installed.
 
 cleaner/lib folders hold the implementations of the cleaners referenced in the clean_xxx files 
 copied to the generated application. This makes it easy to upgrade existing shuboxes.

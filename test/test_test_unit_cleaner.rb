@@ -29,7 +29,6 @@ class TestTestUnitCleaner < Test::Unit::TestCase
     dir_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject'))
     puts "\n" + dir_to_clean
     clean_file = File.join(dir_to_clean, 'test', 'test_io.rb')
-    puts clean_file
     Shubox::TestUnitCleaner.new.run([dir_to_clean, "ignored extra parameter"])
     assert_equal <<-EOF, File.read(clean_file)
 require File.dirname(__FILE__) + '/test_helper'
@@ -47,8 +46,13 @@ EOF
 
   def test_run_cleaner_on_single_file
     file_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject', 'test', 'samples', 'test_right_triangle.rb'))
-    Shubox::TestUnitCleaner.new.run([file_to_clean])
-    assert_equal <<-EOF, File.read(file_to_clean)
+    contents = File.read(file_to_clean)
+
+    cleaner = Shubox::TestUnitCleaner.new
+    cleaner.run([file_to_clean])
+    cleaned_file = File.read(file_to_clean)
+    
+    assert_equal <<-EOF, cleaned_file
 require File.dirname(__FILE__) + '/../test_helper'
 require 'samples/right_triangle'
 
@@ -60,6 +64,9 @@ class TestRightTriangle < Test::Unit::TestCase
   end
 end
 EOF
+
+    cleaned_contents = cleaner.clean_class(contents)
+    assert_equal(cleaned_contents, cleaned_file.strip)
   end
   
 private
