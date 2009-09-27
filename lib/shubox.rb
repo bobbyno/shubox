@@ -5,7 +5,7 @@ $:.unshift(File.dirname(__FILE__) + '/../cleaner_generators') unless
   $:.include?(File.dirname(__FILE__) + '/../cleaner_generators') || $:.include?(File.expand_path(File.dirname(__FILE__) + '../cleaner_generators'))
 
 module Shubox
-  VERSION = '0.8.1'
+  VERSION = '0.8.2'
 end
 
 require 'test_unit_cleaner/lib/test_unit_cleaner'

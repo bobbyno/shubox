@@ -80,4 +80,32 @@ EOF
     cleaned_contents = cleaner.clean_class(contents)
     assert_equal(cleaned_contents, cleaned_file.strip)
   end
+  
+  # Including support for cleaning github.com/edgecase/ruby_koans
+  def test_clean_koans
+    koan = <<-EOF
+require File.dirname(__FILE__) + '/edgecase'
+
+class AboutAsserts < EdgeCase::Koan
+
+  # We shall contemplate truth by testing reality, via asserts.
+  def test_assert_truth
+    assert true
+  end
+end
+EOF
+
+  clean_koan = <<-EOF
+require File.dirname(__FILE__) + '/edgecase'
+
+class AboutAsserts < EdgeCase::Koan
+
+  # We shall contemplate truth by testing reality, via asserts.
+  def test_assert_truth
+  end
+end
+EOF
+  cleaner = Shubox::TestUnitCleaner.new
+  assert_equal(clean_koan.strip, cleaner.clean_class(koan))
+  end
 end

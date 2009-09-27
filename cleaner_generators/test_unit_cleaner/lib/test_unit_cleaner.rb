@@ -1,6 +1,25 @@
 module Shubox
   class TestUnitCleaner
     
+    attr_reader :class_pattern
+    attr_reader :test_pattern
+    attr_reader :test_file_path
+    attr_reader :ending
+    
+    attr_reader :koan_pattern
+    attr_reader :koan_file_path
+    
+    def initialize
+      @class_pattern = /class [a-zA-Z]\S* < Test::Unit::TestCase/
+      @test_pattern = /^\s*def test_/
+      @test_file_path = "/test/**/test_*.rb"
+      @ending = "end"
+      
+      # Support for github.com/edgecase/ruby_koans
+      @koan_pattern = /class [a-zA-Z]\S* < EdgeCase::Koan/
+      @koan_file_path = "/test/**/about_*.rb"      
+    end
+    
     def run(args)
       target = args.first
       return usage if empty_or_help?(target)
@@ -19,16 +38,16 @@ module Shubox
       lines.each do |line|
         if (outside_class || comment?(line))
           output << line
-        elsif (/^\s*def test_/ =~ line)
+        elsif (start_of_test?(line))
           output << line
-          output << "  end\n"
+          output << "  #{@ending}\n"
         end
         
-        if (/class [a-zA-Z]\S* < Test::Unit::TestCase/ =~ line)
+        if (start_of_class?(line))
           outside_class = false
         end
       end
-      output << 'end'
+      output << @ending
       output.join
     end
     
@@ -46,8 +65,17 @@ module Shubox
     end
     
     private    
+    def start_of_class?(line)
+      (@class_pattern =~ line || @koan_pattern =~ line)
+    end
+    
+    def start_of_test?(line)
+      @test_pattern =~ line
+    end
+    
     def clean_directory(dir)
-      files = Dir["#{dir}/test/**/test_*.rb"].each { |file| clean_file(file) }
+      Dir[dir + @test_file_path].each { |file| clean_file(file) }
+      Dir[dir + @koan_file_path].each { |file| clean_file(file) }
     end
     
     def clean_file(filename)
