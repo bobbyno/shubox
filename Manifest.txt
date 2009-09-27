@@ -34,9 +34,9 @@ lib/shubox_app_generator.rb
 script/console
 script/destroy
 script/generate
+test/cleaners/test_test_unit_cleaner.rb
+test/generators/test_java_generator.rb
+test/generators/test_ruby_generator.rb
+test/lib/test_languages.rb
 test/test_generator_helper.rb
 test/test_helper.rb
-test/test_java_generator.rb
-test/test_languages.rb
-test/test_ruby_generator.rb
-test/test_test_unit_cleaner.rb
