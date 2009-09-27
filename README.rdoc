@@ -14,6 +14,20 @@ shubox currently creates environments for Ruby and Java, but can easily be exten
 lends itself to unit testing. shubox is built on newgem, so extending the framework is as simple as creating
 new generator scripts.
 
+After installing shubox and generating a testing environment, you'll start off with some passing tests that exercise
+parts of the language's API. Write new learning tests, naming each method with the intent of the lesson, then write 
+the code that makes a test pass. 
+
+Can you complete the lesson again from memory? If not, you may need to study the concept more closely 
+and implement the tests again. According to {a paper by Karpicke and Roediger}[http://psych.wustl.edu/memory/Roddy%20article%20PDF's/Karpicke_Roediger_2008_Science.pdf],
+"repeated retrieval practice led to greater than 150% improvements in long-term retention than studying alone.
+...Although educators and psychologists often consider testing a neutral process that merely assesses the 
+contents of memory, practicing retrieval during tests clearly produces more learning than additional 
+encoding or study once an item has been recalled."
+
+shubox makes repeated testing easy by providing built-in test cleaners that delete your test implementations, 
+while keeping comments and test names to express the intent of the test.
+
 == INSTALL
 
 The <code>shubox</code> application is distributed as a RubyGem and is available immediately after installation.
@@ -34,17 +48,15 @@ Ruby is the default language option in shubox:
 
 <code>$ rake</code>
 
-If all goes well, you should start off with some passing tests. Write new learning tests, 
-naming each method with the intent of the lesson. Write the code that makes a test pass. 
+To clean all tests in your project: 
 
-Now run script/clean. Cleaners will reset test files by deleting the method bodies. 
-Can you complete the lesson from memory? If so, can you do so faster than before? 
-If not, you may need to study the concept more closely. 
+<code>$ script/clean_test_unit .</code>
 
-Repeat a test-driven lesson until you can easily rewrite it from scratch. Once you can do so, 
-you may move on to another lesson. 
-
-This is repetition with a retrieval step, which leads to long-term retention.
+If you're using TextMate, you can quickly reset a test file from within the editor using 
+"Text -> Filter Through Command". Select "/tmp/learn_ruby/script/filter_test_unit"
+as the command, select "Document" as input, and select "Replace Document" as output. Alternately,
+save the contents of the filter script to a custom TextMate command to easily run it with a 
+keyboard shortcut.
 
 == JAVA USAGE
 
