@@ -1,8 +1,12 @@
 == 0.8.1 2009-09-26
 
-* 1 minor enhancement:
-	* script/clean_test_unit can now be called from within a test file in TextMate 
-	  using "Text -> Filter Through Command" and Document as Input.
+* 2 minor enhancements:
+	* script/filter_test_unit can be called from within a test file in TextMate 
+	  using "Text -> Filter Through Command" and Document as Input; alternately
+	  create a TextMate command with the contents of the script.
+	* Comments and whitespace are now mostly preserved in test cases; comments
+	  appear after the test case in which they appear.
+	
 
 == 0.8 2009-09-22
 

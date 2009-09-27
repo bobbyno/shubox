@@ -15,19 +15,24 @@ class TestTestUnitCleaner < Test::Unit::TestCase
     bare_teardown
   end
   
-  def test_display_usage_with_no_args
-    no_args = Shubox::TestUnitCleaner.new.run([])
-    assert_equal(0, no_args)
+  def test_display_usage_with_no_args_or_help
+    cleaner = Shubox::TestUnitCleaner.new
+    no_args = cleaner.run([""])
+    assert_equal(cleaner.usage, no_args)
+
+    help = cleaner.run(["--help"])
+    assert_equal(cleaner.usage, help)
   end
   
-  def test_display_usage_with_help
-    help = Shubox::TestUnitCleaner.new.run(["--help"])
-    assert_equal(0, help)
+  def test_detect_comments
+    line = "   # Comment here"
+    cleaner = Shubox::TestUnitCleaner.new
+    assert(cleaner.comment?(line))
+    assert(!cleaner.comment?("hello"))
   end
   
   def test_run_cleaner_on_directory
     dir_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject'))
-    puts "\n" + dir_to_clean
     clean_file = File.join(dir_to_clean, 'test', 'test_io.rb')
     Shubox::TestUnitCleaner.new.run([dir_to_clean, "ignored extra parameter"])
     assert_equal <<-EOF, File.read(clean_file)
@@ -38,8 +43,11 @@ require File.dirname(__FILE__) + '/test_helper'
 
 # Exploring the methods of the IO class: http://www.ruby-doc.org/core/classes/IO.html
 class TestIO < Test::Unit::TestCase
-  def test_readlines
+
+  # See String Match for =~ syntax: http://www.ruby-doc.org/core/classes/String.html#M000792
+  def test_readlines_reads_files_as_array
   end
+
 end
 EOF
   end
@@ -58,10 +66,14 @@ require 'samples/right_triangle'
 
 # An example of testing a class in the lib folder.
 class TestRightTriangle < Test::Unit::TestCase
+
+
   def test_hypotenuse
   end
+
   def test_area
   end
+
 end
 EOF
 

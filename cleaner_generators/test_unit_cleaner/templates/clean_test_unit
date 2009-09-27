@@ -9,13 +9,4 @@ end
 
 require 'test_unit_cleaner/lib/test_unit_cleaner'
 
-args = ARGV.first
-
-if (File.directory?(ARGF) || File.file?(ARGF))
-  # Used when files passed in on the command line
-  Shubox::TestUnitCleaner.new.run([args])
-else
-  # Used by TextMate's "Text -> Filter Through Command..."
-  doc = ARGF.readlines
-  puts Shubox::TestUnitCleaner.new.clean_class(doc)
-end
+puts Shubox::TestUnitCleaner.new.run(ARGV)

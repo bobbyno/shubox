@@ -26,6 +26,7 @@ bin/shubox
 cleaner_generators/test_unit_cleaner/USAGE
 cleaner_generators/test_unit_cleaner/lib/test_unit_cleaner.rb
 cleaner_generators/test_unit_cleaner/templates/clean_test_unit
+cleaner_generators/test_unit_cleaner/templates/filter_test_unit
 cleaner_generators/test_unit_cleaner/test_unit_cleaner_generator.rb
 lib/languages.rb
 lib/shubox.rb

@@ -33,7 +33,7 @@ Dir['tasks/**/*.rake'].each { |t| load t }
 # task :default => [:spec, :features]
 
 desc "Create the gem and install it"
-task :dev => [:clean, :manifest, :clean_manifest, :gemspec, :package, :install_gem]
+task :dev => [:clean, :manifest, :clean_manifest, :gemspec, :package, :install_gem, :uat]
 
 desc "Strip out the entries in the .git folder for ppl who haven't updated .hoerc"
 task :clean_manifest do
@@ -48,5 +48,10 @@ task :clean do
 end
 
 task :uninstall do
+  rm_rf("/tmp/tester")
   sh "sudo gem uninstall shubox"
+end
+
+task :uat do
+  sh "shubox /tmp/tester"
 end

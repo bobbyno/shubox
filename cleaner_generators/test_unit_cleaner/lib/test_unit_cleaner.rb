@@ -2,18 +2,10 @@ module Shubox
   class TestUnitCleaner
     
     def run(args)
-      if (%w(-h --help).include?(args.first) || args.empty?)
-        puts usage
-        return 0
-      end
-
       target = args.first
-      # Look for a test class - if there's one, clean lines
-      # Use File.file?("/tmp") to see if it's a file
-      # Use Dir to find files in the directory - if there are some, it's a dir.
+      return usage if empty_or_help?(target)
       
-      
-      if (/.rb$/ =~ target)
+      if File.file?(target)
         clean_file(target)
       else
         clean_directory(target)
@@ -25,7 +17,7 @@ module Shubox
       outside_class = true
       
       lines.each do |line|
-        if (outside_class)
+        if (outside_class || comment?(line))
           output << line
         elsif (/^\s*def test_/ =~ line)
           output << line
@@ -38,6 +30,19 @@ module Shubox
       end
       output << 'end'
       output.join
+    end
+    
+    def comment?(line)
+      (line =~ /^\s*#/ || line =~ /^\s*$/)
+    end
+    
+    def empty_or_help?(input)
+      return (input.nil? || input.empty? || %w(-h --help).include?(input))
+    end
+    
+    def usage
+      usage_file = File.dirname(__FILE__) + "/../USAGE"
+      return File.readlines(usage_file)
     end
     
     private    
@@ -55,11 +60,6 @@ module Shubox
       open(filename, 'w') do |f|
         f.puts output
       end
-    end
-    
-    def usage
-      usage_file = File.dirname(__FILE__) + "/../USAGE"
-      return File.readlines(usage_file)
     end
   end
 end
