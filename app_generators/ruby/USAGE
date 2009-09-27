@@ -1,11 +1,12 @@
 Description:
 
 shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
-to start coding: A directory structure, some classes and unit tests to get started, and a Rakefile to run
-all tests.
+to start coding: A directory structure, some classes and unit tests to get started, a Rakefile to run
+all tests, and cleaners to delete test implementations and facilitate repetition.
 
 Usage:
 
- $ cd ~/ruby_projects
- $ shubox learning_ruby
- $ rake
+	$ shubox /tmp/learn_ruby
+	$ cd /tmp/learn_ruby
+	$ rake
+	
