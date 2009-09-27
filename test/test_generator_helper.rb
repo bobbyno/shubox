@@ -49,14 +49,12 @@ module RubiGen::GeneratorTestHelper
       raise "Exit code #{$?} while running generated build script with #{cmd}" if ($?.to_s != "0")
     end
   end
-
+  
   def sources
-    [RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__),"..", generator_path))]
+    [ RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__), "..", "app_generators")),
+      RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__), "..", "cleaner_generators"))]
   end
 
-  def generator_path
-    "app_generators"
-  end
   # Some generator-related assertions:
   #   assert_generated_file(name, &block) # block passed the file contents
   #   assert_directory_exists(name)

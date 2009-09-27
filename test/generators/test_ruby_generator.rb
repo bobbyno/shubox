@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "test_generator_helper.rb")
+require File.join(File.dirname(__FILE__), "..", "test_generator_helper.rb")
 require 'fileutils'
 require 'languages'
 
@@ -31,12 +31,4 @@ class TestRubyGenerator < Test::Unit::TestCase
 
     run_generated_build_script("rake")
   end
-  
-  private
-  def sources
-    [ RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__),"..", "app_generators")),
-      RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__), "..", "cleaner_generators"))
-    ]
-  end
-
 end

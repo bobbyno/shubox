@@ -1,5 +1,5 @@
-require File.join(File.dirname(__FILE__), "test_generator_helper.rb")
-require File.join(File.dirname(__FILE__), '..', 'cleaner_generators', 'test_unit_cleaner', 'lib', 'test_unit_cleaner')
+require File.join(File.dirname(__FILE__), "..", "test_generator_helper.rb")
+require File.join(File.dirname(__FILE__), '..', '..', 'cleaner_generators', 'test_unit_cleaner', 'lib', 'test_unit_cleaner')
 require 'fileutils'
 require 'languages'
 
@@ -32,7 +32,7 @@ class TestTestUnitCleaner < Test::Unit::TestCase
   end
   
   def test_run_cleaner_on_directory
-    dir_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject'))
+    dir_to_clean = File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp', 'myproject'))
     clean_file = File.join(dir_to_clean, 'test', 'test_io.rb')
     Shubox::TestUnitCleaner.new.run([dir_to_clean, "ignored extra parameter"])
     assert_equal <<-EOF, File.read(clean_file)
@@ -53,7 +53,7 @@ EOF
   end
 
   def test_run_cleaner_on_single_file
-    file_to_clean = File.expand_path(File.join(File.dirname(__FILE__), 'tmp', 'myproject', 'test', 'samples', 'test_right_triangle.rb'))
+    file_to_clean = File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp', 'myproject', 'test', 'samples', 'test_right_triangle.rb'))
     contents = File.read(file_to_clean)
 
     cleaner = Shubox::TestUnitCleaner.new
@@ -79,12 +79,5 @@ EOF
 
     cleaned_contents = cleaner.clean_class(contents)
     assert_equal(cleaned_contents, cleaned_file.strip)
-  end
-  
-private
-  def sources
-    [ RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__),"..", "app_generators")),
-      RubiGen::PathSource.new(:test, File.join(File.dirname(__FILE__), "..", "cleaner_generators"))
-    ]
   end
 end

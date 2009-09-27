@@ -1,4 +1,5 @@
-require File.join(File.dirname(__FILE__), "test_generator_helper.rb")
+require File.join(File.dirname(__FILE__), "..", "test_generator_helper.rb")
+require 'languages'
 
 class TestJavaGenerator < Test::Unit::TestCase
   include RubiGen::GeneratorTestHelper
