@@ -1,0 +1,29 @@
+= Clojure Shubox
+
+Generated from http://www.github.com/bobbyno/shubox
+
+== Running via command line
+
+REPL: <code>bin/repl.sh</code>
+
+Tests: <code>bin/runtests.sh</code>
+
+== Running in IntelliJ
+
+* Install the La Clojure plugin
+* Create a run configuration for tests.clj
+* Check "Run script in REPL" and uncheck "Display settings before launching"
+* Run tests.clj - output displays in the run tab
+* Enter <code>(. System exit 0)</code> or hit the stop button if the REPL doesn't exit.
+
+== Credits
+
+Project structure based on Stuart Halloway's clojure-bowling: http://github.com/stuarthalloway/clojure-bowling/
+
+Note that this requires a post-1.0 version of Clojure and contrib to use the new 'are' syntax.
+
+Required JARs are in lib, and there are scripts to run a REPL or the tests in bin.
+
+== Author
+
+Bobby Norton

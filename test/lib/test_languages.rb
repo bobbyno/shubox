@@ -19,6 +19,8 @@ class TestLanguages < Test::Unit::TestCase
     assert_equal("java", Languages.parse(args))
     args = %w{--language=ruby app_name}
     assert_equal("ruby", Languages.parse(args))
+    args = %w{--language=clojure app_name}
+    assert_equal("clojure", Languages.parse(args))
   end
 
   def test_reject_invalid_language
@@ -29,7 +31,7 @@ class TestLanguages < Test::Unit::TestCase
   end
 
   def test_print_languages
-    base = "java|ruby"
+    base = "clojure|java|ruby"
     print = Languages.print
     assert(print.include?(base))
   end

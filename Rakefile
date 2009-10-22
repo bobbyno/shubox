@@ -48,10 +48,14 @@ task :clean do
 end
 
 task :uninstall do
-  rm_rf("/tmp/tester")
+  rm_rf("/tmp/clojure_test")
+  rm_rf("/tmp/JavaTest")
+  rm_rf("/tmp/ruby_test")
   sh "sudo gem uninstall shubox"
 end
 
 task :uat do
-  sh "shubox /tmp/tester"
+  sh "shubox -l=clojure /tmp/clojure_test"
+  sh "shubox -l=java /tmp/JavaTest"
+  sh "shubox /tmp/ruby_test"
 end

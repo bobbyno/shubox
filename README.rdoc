@@ -73,6 +73,21 @@ opened in IntelliJ 8.
 
 shubox does not currently include a JUnit cleaner script. Patches welcome. ;-)
 
+== CLOJURE USAGE
+
+shubox also supports Clojure: 
+
+<code>$ shubox -l=clojure /tmp/learn_clojure</code>
+
+<code>$ cd /tmp/learn_clojure</code>
+
+<code>$ bin/runtests.sh</code>
+
+The Clojure command will also generate a <project name>.ipr file to allow the project to easily be
+opened in IntelliJ 8.
+
+shubox does not currently include a clojure test cleaner script. Patches welcome. ;-)
+
 == APPLICATION ARCHITECTURE
 
 shubox is organized as a set of generators, as in newgem and RubiGen. 
@@ -106,6 +121,8 @@ Test-Driven Learning Attendees at {SCNA 2009}[http://scna.softwarecraftsmanship.
 Dr. Nic Williams for newgem and rubigen: {RubyConf 2007 Presentation}[http://rubyconf2007.confreaks.com/d3t1p1_rubigen.html]
 
 Jim Weirich and EdgeCase for {ruby_koans}[http://github.com/edgecase/ruby_koans]
+
+Stu Halloway for the clojure project structure in {clojure_bowling}[http://github.com/stuarthalloway/clojure-bowling/]
 
 
 

@@ -6,9 +6,9 @@ to run all tests.
 
 Usage:
 
- $ cd ~/your_projects
- $ shubox --java LearnJava
- $ ant -f build/build.xml
+	$ shubox -l=java /tmp/LearnJava
+	$ cd /tmp/LearnJava
+	$ ant -f build/build.xml
 
 If you have IntelliJ, open the IPR file to get started with adding your learning tests. If you have
 a different IDE, follow the instructions to import your application as existing source.

@@ -1,0 +1,15 @@
+Description:
+
+shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
+to start coding: A directory structure, some classes and unit tests to get started, and a build script
+to run all tests.
+
+Usage:
+
+ $ shubox -l=clojure /tmp/learn_clojure
+ $ cd /tmp/learn_clojure
+ $ bin/runtests.sh
+
+If you have IntelliJ, install the La Clojure plugin, then open the IPR file to get started with adding 
+your learning tests. If you have a different IDE, follow the instructions to import your application as 
+existing source.

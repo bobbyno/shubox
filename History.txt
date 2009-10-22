@@ -1,3 +1,8 @@
+== 0.9	2009-10-22
+
+* 1 major enhancement:
+	* added clojure environment based on Stu Halloway's clojure_bowling
+
 == 0.8.2 2009-09-26
 
 * 1 minor enhancements:
