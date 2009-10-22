@@ -6,14 +6,12 @@ More on Test-Driven Learning: http://www.bobbynorton.com/?p=36
 
 == DESCRIPTION
 
-Test-driven learning is a way to master a programming language by writing unit tests around its API's.
 shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
 to start coding: A directory structure, some classes and unit tests to get started, and a build script.
 
-shubox currently creates environments for Ruby and Java, but can easily be extended to any language that
-lends itself to unit testing. shubox is built on newgem, so extending the framework is as simple as creating
-new generator scripts.
+== TEST-DRIVEN LEARNING
 
+Test-driven learning is a way to master a programming language by writing unit tests around its API's.
 After installing shubox and generating a testing environment, you'll start off with some passing tests that exercise
 parts of the language's API. Write new learning tests, naming each method with the intent of the lesson, then write 
 the code that makes a test pass. 
@@ -26,17 +24,17 @@ contents of memory, practicing retrieval during tests clearly produces more lear
 encoding or study once an item has been recalled."
 
 shubox makes repeated testing easy by providing built-in test cleaners that delete your test implementations, 
-while keeping comments and test names to express the intent of the test.
+while keeping comments and test names to express the intent of the test. shubox currently creates environments 
+for Ruby and Java, but can easily be extended to any language that lends itself to unit testing. shubox is built 
+on newgem, so extending the framework is as simple as creating new generator scripts.
 
 == INSTALL
 
 The <code>shubox</code> application is distributed as a RubyGem and is available immediately after installation.
 
-<code>$ gem sources -a http:http://gems.github.com</code>
+<code>$ gem sources -a http:http://gemcutter.org</code>
 
-<code>$ sudo gem install bobbyno-shubox</code>
-
-Alternately, download the gem and install manually from github.
+<code>$ sudo gem install shubox</code>
 
 == RUBY USAGE
 

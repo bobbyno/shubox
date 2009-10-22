@@ -8,27 +8,8 @@ Gem::Specification.new do |s|
   s.authors = ["Bobby Norton"]
   s.date = %q{2009-10-22}
   s.default_executable = %q{shubox}
-  s.description = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's.
-shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
-to start coding: A directory structure, some classes and unit tests to get started, and a build script.
-
-shubox currently creates environments for Ruby and Java, but can easily be extended to any language that
-lends itself to unit testing. shubox is built on newgem, so extending the framework is as simple as creating
-new generator scripts.
-
-After installing shubox and generating a testing environment, you'll start off with some passing tests that exercise
-parts of the language's API. Write new learning tests, naming each method with the intent of the lesson, then write 
-the code that makes a test pass. 
-
-Can you complete the lesson again from memory? If not, you may need to study the concept more closely 
-and implement the tests again. According to {a paper by Karpicke and Roediger}[http://psych.wustl.edu/memory/Roddy%20article%20PDF's/Karpicke_Roediger_2008_Science.pdf],
-"repeated retrieval practice led to greater than 150% improvements in long-term retention than studying alone.
-...Although educators and psychologists often consider testing a neutral process that merely assesses the 
-contents of memory, practicing retrieval during tests clearly produces more learning than additional 
-encoding or study once an item has been recalled."
-
-shubox makes repeated testing easy by providing built-in test cleaners that delete your test implementations, 
-while keeping comments and test names to express the intent of the test.}
+  s.description = %q{shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which
+to start coding: A directory structure, some classes and unit tests to get started, and a build script.}
   s.email = ["codeculturist@gmail.com"]
   s.executables = ["shubox"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "app_generators/ruby/templates/file.txt", "README.rdoc"]
@@ -38,8 +19,8 @@ while keeping comments and test names to express the intent of the test.}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{shubox}
-  s.rubygems_version = %q{1.3.4}
-  s.summary = %q{Test-driven learning is a way to master a programming language by writing unit tests around its API's}
+  s.rubygems_version = %q{1.3.5}
+  s.summary = %q{shubox lowers the barrier to entry for test-driven learning by providing a basic infrastructure in which to start coding: A directory structure, some classes and unit tests to get started, and a build script.}
   s.test_files = ["test/cleaners/test_test_unit_cleaner.rb", "test/generators/test_clojure_generator.rb", "test/generators/test_java_generator.rb", "test/generators/test_ruby_generator.rb", "test/lib/test_languages.rb", "test/test_generator_helper.rb", "test/test_helper.rb"]
 
   if s.respond_to? :specification_version then
