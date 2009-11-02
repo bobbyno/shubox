@@ -1,0 +1,15 @@
+<project name="learn_clojure" default="test" basedir=".">
+
+  <path id="test.classpath">
+    <fileset dir="lib" includes="*.jar"/>
+  </path>
+
+  <target name="test">
+    <java classname="clojure.main" classpathref="test.classpath" dir="test" fork="true" failonerror="true">
+      <classpath path="test"/>
+      <arg value="-e"/>
+      <arg value="(use 'test-runner)"/>
+    </java>
+  </target>
+
+</project>

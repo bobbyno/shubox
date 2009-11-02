@@ -79,7 +79,7 @@ shubox also supports Clojure:
 
 <code>$ cd /tmp/learn_clojure</code>
 
-<code>$ bin/runtests.sh</code>
+<code>$ ant</code>
 
 The Clojure command will also generate a <project name>.ipr file to allow the project to easily be
 opened in IntelliJ 8.

@@ -1,4 +1,4 @@
-(ns core.about_clojure_testing
+(ns learning.about-clojure-testing
   (:use clojure.test))
 
 ; Define a simple "Hello, World" function to test

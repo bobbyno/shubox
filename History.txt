@@ -1,3 +1,8 @@
+== 0.9.1	2009-11-1
+
+* 1 minor enhancement:
+	* Clojure learning tests now auto-discovered; thanks, Stu.
+
 == 0.9	2009-10-22
 
 * 1 major enhancement:
