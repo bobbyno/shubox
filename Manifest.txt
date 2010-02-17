@@ -17,6 +17,7 @@ app_generators/clojure/templates/project.ipr
 app_generators/clojure/templates/src/repl.clj
 app_generators/clojure/templates/test/learning/about_clojure_testing.clj
 app_generators/clojure/templates/test/learning/about_forms.clj
+app_generators/clojure/templates/test/learning/about_functional_programming.clj
 app_generators/clojure/templates/test/learning/about_sequences.clj
 app_generators/clojure/templates/test/test_runner.clj
 app_generators/java/USAGE
