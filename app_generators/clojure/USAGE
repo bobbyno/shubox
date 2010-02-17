@@ -13,3 +13,6 @@ Usage:
 If you have IntelliJ, install the La Clojure plugin, then open the IPR file to get started with adding 
 your learning tests. If you have a different IDE, follow the instructions to import your application as 
 existing source.
+
+You will start off with a failing test in about_functional_programming. Review the code there and swap
+(?) with the correct implementation. 

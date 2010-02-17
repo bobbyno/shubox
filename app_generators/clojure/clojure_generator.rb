@@ -32,6 +32,7 @@ class ClojureGenerator < ShuboxAppGenerator
       m.file("test/learning/about_clojure_testing.clj", "test/learning/about_clojure_testing.clj")
       m.file("test/learning/about_forms.clj", "test/learning/about_forms.clj")
       m.file("test/learning/about_sequences.clj", "test/learning/about_sequences.clj")
+      m.file("test/learning/about_functional_programming.clj", "test/learning/about_functional_programming.clj")
       m.file("test/test_runner.clj", "test/test_runner.clj")
       m.file("build.xml", "build.xml")
     end

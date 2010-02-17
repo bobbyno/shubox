@@ -36,6 +36,7 @@ class TestClojureGenerator < Test::Unit::TestCase
     assert_directory_exists "test"
     assert_directory_exists "test/learning"
     assert_generated_file   "test/learning/about_clojure_testing.clj"
+    assert_generated_file   "test/learning/about_functional_programming.clj"
     assert_generated_file   "test/learning/about_forms.clj"
     assert_generated_file   "test/test_runner.clj"
 
